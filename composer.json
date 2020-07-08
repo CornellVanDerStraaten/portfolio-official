@@ -1,6 +1,6 @@
 {
-  "name": "mediacollege/mvc-starter",
-  "description": "MVC Starter project - BAP",
+  "name": "CornellVanDerStraaten/portfolio-official",
+  "description": "Portfolio website van Cornell van der Straaten",
   "type": "project",
   "require": {
     "pecee/simple-router": "^4.2",
@@ -13,8 +13,8 @@
   "license": "GPL-3.0-or-later",
   "authors": [
     {
-      "name": "Hidde Braun",
-      "email": "h.braun@ma-web.nl"
+      "name": "Cornell van der Straaten",
+      "email": "cornellbvanders@gmail.com"
     }
   ],
   "autoload": {
