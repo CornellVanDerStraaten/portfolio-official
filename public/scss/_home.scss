@@ -2,4 +2,15 @@
 
 .header-text {
     font-family: "Philosopher", sans-serif;
+    text-align: center;
+    width: 190%;
+}
+.header-text:after {
+    color: red;
+    mix-blend-mode: difference;
+}
+.home-red-square {
+    background-color:#A70101;
+    width: 10em;
+    height: 10em;
 }
