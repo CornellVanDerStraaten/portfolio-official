@@ -14,6 +14,8 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
 
 
+	SimpleRouter::get( '/admin', 'AdminController@admin' )->name( 'admin' );
+
 	// STOP: Tot hier al je eigen URL's zetten
 	SimpleRouter::get( '/not-found', function () {
 		http_response_code( 404 );
