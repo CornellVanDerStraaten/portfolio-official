@@ -84,23 +84,23 @@ function current_route_is( $name ) {
 
 }
 
-function validateLoginData($data)
+function validate($data)
 {
 	$errors = [];
 
 	$email      = filter_var($data['email'], FILTER_VALIDATE_EMAIL);
-	$wachtwoord = trim($data['wachtwoord']);
+	$password = trim($data['password']);
 
 	if ($email === false) {
-		$errors['email'] = 'Geen geldig email ingevuld';
+		$errors['email'] = 'Not a valid e-mail address.';
 	}
 
-	if (empty($wachtwoord)) {
-		$errors['wachtwoord'] = 'Geen geldig wachtwoord!';
+	if (empty($password)) {
+		$errors['password'] = 'Not a valid password!';
 	}
 	$data = [
 		'email' => $data['email'],
-		'wachtwoord' => $wachtwoord
+		'password' => $password
 	];
 
 	return [
