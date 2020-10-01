@@ -1,0 +1,8 @@
+<svg id="Component_3_1" data-name="Component 3 – 1" xmlns="http://www.w3.org/2000/svg" width="220" height="128.318" viewBox="0 0 220 128.318">
+  <g id="Group_1" data-name="Group 1">
+    <text id="C" transform="matrix(0.985, 0.174, -0.174, 0.985, 60.873, 97.74)" font-size="82" font-family="JosefinSans-Regular, Josefin Sans"><tspan x="0" y="0">C</tspan></text>
+    <text id="S" transform="translate(91 75)" font-size="99" font-family="JosefinSans-Regular, Josefin Sans"><tspan x="0" y="0">S</tspan></text>
+    <text id="_" data-name="&lt;" transform="translate(0 86)" fill="#20b3d1" font-size="109" font-family="JosefinSans-Light, Josefin Sans" font-weight="300"><tspan x="0" y="0">&lt;</tspan></text>
+    <text id="_2" data-name="&gt;" transform="translate(149 85)" fill="#20b3d1" font-size="113" font-family="JosefinSans-Light, Josefin Sans" font-weight="300"><tspan x="0" y="0">&gt;</tspan></text>
+  </g>
+</svg>
