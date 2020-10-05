@@ -20,6 +20,13 @@ class WebsiteController {
 
 	}
 	
+	public function logOut() {
+		session_start();
+		session_destroy();
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('homepage');
+	}
 
 }
 

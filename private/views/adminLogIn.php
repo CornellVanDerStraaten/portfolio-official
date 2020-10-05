@@ -2,14 +2,14 @@
 
 <div class="admin-login-div">
     <h1 class="admin-login__title">Admin Log in</h1>
-    <form class="admin-login__form" action="<?php echo url('admin') ?>" method="POST">
-        <label class="admin-login__label" for="adminEmailInput"></label>
-        <input class="admin-login__input" type="email" name="email" id="adminEmailInput" placeholder="Email here">
+    <form class="admin-login__form" action="<?php echo site_url('/adminLogIn') ?>" method="POST">
+        <label class="admin-login__label" for="adminEmailInput">E-mail</label>
+        <input class="admin-login__input" type="email" name="email" id="adminEmailInput">
         
-        <label class="admin-login__label" for="adminWachtwoordInput"></label>
-        <input class="admin-login__input" type="password" name="password" id="adminPasswordInput" placeholder="Password please">
+        <label class="admin-login__label" for="adminWachtwoordInput">Password</label>
+        <input class="admin-login__input" type="password" name="password" id="adminPasswordInput" >
 
-        <input type="submit" value="Log in">
+        <input type="submit" value="Log in" class="admin-login__submit">
     </form>
     <!-- If errors -> error message -->
     <?php if ( isset( $errors ) )  { ?>

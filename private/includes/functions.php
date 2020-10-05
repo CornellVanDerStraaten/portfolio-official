@@ -84,6 +84,12 @@ function current_route_is( $name ) {
 
 }
 
+function isSessionStarted() {
+	if(!isset($_SESSION)) {
+		session_start();
+	}
+}
+
 function validate($data)
 {
 	$errors = [];

@@ -12,9 +12,13 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	// Lees de docs, daar zie je hoe je routes kunt maken: https://github.com/skipperbent/simple-php-router#routes
 
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
+	SimpleRouter::get( '/logOut', 'WebsiteController@logOut' )->name( 'logOut' );
 
 
-	SimpleRouter::match(['get','post'], '/admin', 'AdminController@admin' )->name( 'admin' );
+	SimpleRouter::match(['get','post'], '/admin', 'AdminController@adminLogInPage' )->name( 'adminLogInPage' );
+	SimpleRouter::match(['get','post'], '/adminLogIn', 'AdminController@adminLogInProcessing' )->name( 'adminLogInProcessing' );
+	SimpleRouter::match(['get','post'], '/adminHome', 'AdminController@adminDashboard' )->name( 'adminDashboard' );
+
 
 	// STOP: Tot hier al je eigen URL's zetten
 	SimpleRouter::get( '/not-found', function () {

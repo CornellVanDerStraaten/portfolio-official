@@ -13,9 +13,11 @@ namespace Website\Controllers;
 
 class AdminController
 {
-	public function admin()
+	public function adminLogInPage()
 	{
-		if (isset($_SESSION)) {
+
+		// If already logged in, go directly to dashboard
+		if (isset($_SESSION['user_id'])) {
 			$template_engine = get_template_engine();
 			echo $template_engine->render('adminHome');
 		} else {
@@ -38,10 +40,11 @@ class AdminController
 				if (password_verify($result['data']['wachtwoord'], $userInfo['wachtwoord'])) {
 					$_SESSION['user_id'] = $userInfo['id'];
 
-					$overviewURL = url('overview');
-					redirect($overviewURL);
+					$adminURL = site_url('/adminDashboard');
+					echo $adminURL;
+					redirect($adminURL);
 				} else {
-					$result['errors']['wachtwoord'] = 'Onjuist wachtwoord, probeer overnieuw.';
+					$result['errors']['wachtwoord'] = 'Wrong password, try again.';
 				}
 			}
 		} else {
@@ -50,5 +53,18 @@ class AdminController
 
 		$template_engine = get_template_engine();
 		echo $template_engine->render('adminLogIn', ['errors' => $result['errors']]);
+	}
+
+	public function adminDashboard() {
+		session_start();
+		if( isset($_SESSION['user_id']) ) {
+			$template_engine = get_template_engine();
+			echo $template_engine->render('adminHome');
+		} else {
+			$adminURL = url('adminLogInPage');
+			redirect($adminURL);
+		}
+
+		
 	}
 }
