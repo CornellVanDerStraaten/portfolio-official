@@ -11,3 +11,18 @@ function userRegisteredCheck($email) {
 	
 	return $statement;
 }
+
+function insertProjectStart($postData, $filename) {
+    $connection = dbConnect();
+
+    $sql = 'INSERT INTO `projecten` (`project_naam`, `keywords`, `project_image`)
+            VALUES (:project_naam, :keywords, :project_image) ';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'project_naam'  => $postData['project_naam'],
+        'keywords'      => $postData['project_keywords'],
+        'project_image' => $filename
+    ];
+    $statement->execute($params);
+}

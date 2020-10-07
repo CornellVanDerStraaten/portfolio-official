@@ -18,7 +18,8 @@
             <p class="admin-login__error-text"><?php echo $row ?></p>
         <?php } ?>
     </div>
-    <?php } ?>
+        <?php } ?>
+
 </div>
 
-<?php include 'footer.php'  ?>
+<?php include 'footer.php';  ?>

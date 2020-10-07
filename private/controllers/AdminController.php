@@ -15,6 +15,7 @@ class AdminController
 {
 	public function adminLogInPage()
 	{
+		isSessionStarted();
 
 		// If already logged in, go directly to dashboard
 		if (isset($_SESSION['user_id'])) {
@@ -26,26 +27,28 @@ class AdminController
 		}
 	}
 
-	public function adminLogIn()
+	public function adminLogInProcessing()
 	{
-		$result = validate($_POST);
+		$result = validateLogIn($_POST);
 
 		if (count($result['errors']) === 0) {
 			// Check if email exists
 			$statement = userRegisteredCheck($result['data']['email']);
-			if (!$statement->rowCount() === 0 ) {
+			if ($statement->rowCount() === 1 ) {
 				// Uitvoeren wanneer email al bekend is
 				$userInfo = $statement->fetch();
-
-				if (password_verify($result['data']['wachtwoord'], $userInfo['wachtwoord'])) {
+			
+				if (password_verify($result['data']['password'], $userInfo['password'])) {
+					isSessionStarted();
 					$_SESSION['user_id'] = $userInfo['id'];
 
-					$adminURL = site_url('/adminDashboard');
-					echo $adminURL;
+					$adminURL = site_url('/adminHome');
 					redirect($adminURL);
 				} else {
 					$result['errors']['wachtwoord'] = 'Wrong password, try again.';
 				}
+			} else {
+				$result['errors']['email']	= 'Unknown email address.';
 			}
 		} else {
 			$result['errors']['wrong'] = 'Wrong password or unknown e-mail address.';
@@ -56,13 +59,16 @@ class AdminController
 	}
 
 	public function adminDashboard() {
-		session_start();
+		isSessionStarted();
+		
 		if( isset($_SESSION['user_id']) ) {
 			$template_engine = get_template_engine();
 			echo $template_engine->render('adminHome');
 		} else {
-			$adminURL = url('adminLogInPage');
-			redirect($adminURL);
+			$result['errors']['ingelogd'] = 'Not logged in.';
+
+			$template_engine = get_template_engine();
+			echo $template_engine->render('adminLogIn', ['errors' => $result['errors']]);
 		}
 
 		

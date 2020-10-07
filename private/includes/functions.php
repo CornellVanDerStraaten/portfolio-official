@@ -10,24 +10,23 @@ require_once __DIR__ . '/route_helpers.php';
  * Verbinding maken met de database
  * @return \PDO
  */
-function dbConnect() {
+function dbConnect()
+{
 
-	$config = get_config( 'DB' );
+	$config = get_config('DB');
 
 	try {
 		$dsn = 'mysql:host=' . $config['HOSTNAME'] . ';dbname=' . $config['DATABASE'] . ';charset=utf8';
 
-		$connection = new PDO( $dsn, $config['USER'], $config['PASSWORD'] );
-		$connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-		$connection->setAttribute( PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC );
+		$connection = new PDO($dsn, $config['USER'], $config['PASSWORD']);
+		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 		return $connection;
-
-	} catch ( \PDOException $e ) {
+	} catch (\PDOException $e) {
 		echo 'Fout bij maken van database verbinding: ' . $e->getMessage();
 		exit;
 	}
-
 }
 
 /**
@@ -38,31 +37,33 @@ function dbConnect() {
  *
  * @return string
  */
-function site_url( $path = '' ) {
-	return get_config( 'BASE_URL' ) . $path;
+function site_url($path = '')
+{
+	return get_config('BASE_URL') . $path;
 }
 
-function get_config( $name ) {
+function get_config($name)
+{
 	$config = require __DIR__ . '/config.php';
-	$name   = strtoupper( $name );
+	$name   = strtoupper($name);
 
-	if ( isset( $config[ $name ] ) ) {
-		return $config[ $name ];
+	if (isset($config[$name])) {
+		return $config[$name];
 	}
 
-	throw new \InvalidArgumentException( 'Er bestaat geen instelling met de key: ' . $name );
+	throw new \InvalidArgumentException('Er bestaat geen instelling met de key: ' . $name);
 }
 
 /**
  * Hier maken we de template engine en vertellen de template engine waar de templates/views staan
  * @return \League\Plates\Engine
  */
-function get_template_engine() {
+function get_template_engine()
+{
 
-	$templates_path = get_config( 'PRIVATE' ) . '/views';
+	$templates_path = get_config('PRIVATE') . '/views';
 
-	return new League\Plates\Engine( $templates_path );
-
+	return new League\Plates\Engine($templates_path);
 }
 
 /**
@@ -73,24 +74,25 @@ function get_template_engine() {
  *
  * @return bool
  */
-function current_route_is( $name ) {
+function current_route_is($name)
+{
 	$route = request()->getLoadedRoute();
 
-	if ( $route ) {
-		return $route->hasName( $name );
+	if ($route) {
+		return $route->hasName($name);
 	}
 
 	return false;
-
 }
 
-function isSessionStarted() {
-	if(!isset($_SESSION)) {
+function isSessionStarted()
+{
+	if (!isset($_SESSION)) {
 		session_start();
 	}
 }
 
-function validate($data)
+function validateLogIn($data)
 {
 	$errors = [];
 
@@ -113,4 +115,68 @@ function validate($data)
 		'data' => $data,
 		'errors' => $errors
 	];
+}
+
+function validateFotoUpload($myfile, $errors)
+{
+
+	// Check if file was uploaded
+	if (!isset($_FILES['project_image'])) {
+		$errors['myfile'] = "No file uploaded.";
+		
+		$template_engine = get_template_engine();
+		echo $template_engine->render('adminHome',['errors' => $errors]);
+		exit;
+	}
+
+	//  Checken van upload fouten
+	$file_error = $myfile['project_image']['error'];
+	switch ($file_error) {
+		case UPLOAD_ERR_OK:
+			break;
+		case UPLOAD_ERR_NO_FILE:
+			$errors['myfile'] = 'No file uploaded.';
+			break;
+		case UPLOAD_ERR_CANT_WRITE:
+			$errors['myfile'] = 'Could not write to disk.';
+			break;
+		case UPLOAD_ERR_INI_SIZE:
+		case UPLOAD_ERR_FORM_SIZE:
+			$errors['myfile'] = 'File size too big.';
+			break;
+		default:
+			$errors['myfile'] = 'Unknown error';
+	}
+
+	if (count($errors) === 0) {
+
+		$file_name = $myfile['project_image']['name'];
+		$file_size = $myfile['project_image']['size'];
+		$file_tmp = $myfile['project_image']['tmp_name'];
+		$file_type = $myfile['project_image']['type'];
+
+		// Is it an image check 
+		$valid_image_types = [
+			2 => 'jpg',
+			3 => 'png'
+		];
+		$image_type        = exif_imagetype($file_tmp);
+		if ($image_type !== false) {
+			// Find correct extension for the new filename
+			$file_extension = $valid_image_types[$image_type];
+		} else {
+			$errors['myfile'] = 'This is not an image';
+		}
+	}
+	if (count($errors) === 0) {
+
+		// Generate filename
+		$new_filename   = sha1_file($file_tmp) . '.' . $file_extension;
+		$final_filename = 'uploads/' . $new_filename;
+
+		// Move to temporary position
+		move_uploaded_file($file_tmp, $final_filename); // Move to correct folder
+
+		return $new_filename;
+	}
 }

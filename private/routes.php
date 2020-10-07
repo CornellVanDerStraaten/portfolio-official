@@ -14,10 +14,14 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
 	SimpleRouter::get( '/logOut', 'WebsiteController@logOut' )->name( 'logOut' );
 
+	// Admin page startup and login
+	SimpleRouter::get('/admin', 'AdminController@adminLogInPage' )->name( 'adminLogInPage' );
+	SimpleRouter::post('/adminLogIn', 'AdminController@adminLogInProcessing' )->name( 'adminLogInProcessing' );
+	SimpleRouter::get('/adminHome', 'AdminController@adminDashboard' )->name( 'adminDashboard' );
 
-	SimpleRouter::match(['get','post'], '/admin', 'AdminController@adminLogInPage' )->name( 'adminLogInPage' );
-	SimpleRouter::match(['get','post'], '/adminLogIn', 'AdminController@adminLogInProcessing' )->name( 'adminLogInProcessing' );
-	SimpleRouter::match(['get','post'], '/adminHome', 'AdminController@adminDashboard' )->name( 'adminDashboard' );
+	// Admin page functionalities ( Projecten )
+	SimpleRouter::post('/adminHome/addProject', 'ProjectController@addProjectStart' )->name( 'adminAddProjectStart' );
+
 
 
 	// STOP: Tot hier al je eigen URL's zetten
