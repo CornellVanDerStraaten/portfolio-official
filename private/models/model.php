@@ -7,7 +7,6 @@ function userRegisteredCheck($email) {
     $sql =  'SELECT * FROM `config` WHERE `email`= :email';
     $statement = $connection->prepare($sql);
     $statement->execute(['email' => $email]);
-
 	
 	return $statement;
 }
@@ -25,4 +24,13 @@ function insertProjectStart($postData, $filename) {
         'project_image' => $filename
     ];
     $statement->execute($params);
+}
+
+function getProjects() {
+    $connection = dbConnect();
+    $sql = 'SELECT * FROM `projecten` ';
+    $statement = $connection->prepare($sql);
+    $statement->execute();
+    
+    return $statement;
 }
