@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 <div class="adminHome__container">
     <div class="addProject__container">
-        <form class="addProject__form" action="<?php echo site_url('/adminHome/addProject') ?>" method="POST" enctype="multipart/form-data">
+        <form class="addProject__form" action="<?php echo site_url('/adminAddProject') ?>" method="POST" enctype="multipart/form-data">
             <label class="addProject__label" for="pNaam">Project Name</label>
             <input class="addProject__text" type="text" name="project_naam" id="pNaam">
 

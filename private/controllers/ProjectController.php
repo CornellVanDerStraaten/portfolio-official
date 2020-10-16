@@ -13,15 +13,15 @@ namespace Website\Controllers;
 
 class ProjectController
 {
-	public function addProjectStart()
-	{
-		
+	public function addProjectContent()
+	{	
 		$errors = [];
 
 		$new_filename = validateFotoUpload($_FILES, $errors);
-		insertProjectStart($_POST, $new_filename);
+		$basic_project_info = ['post_info' => $_POST, 'filename' => $new_filename];
+		// insertProjectStart($_POST, $new_filename);
 
-		$adminURL = site_url('/adminHome');
-		redirect($adminURL);
+		$template_engine = get_template_engine();
+		echo $template_engine->render('adminAddProjectContent', ['basic_project_info' => $basic_project_info]);
 	}
 }

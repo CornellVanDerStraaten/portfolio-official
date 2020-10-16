@@ -20,7 +20,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get('/adminHome', 'AdminController@adminDashboard' )->name( 'adminDashboard' );
 
 	// Admin page functionalities ( Projecten )
-	SimpleRouter::post('/adminHome/addProject', 'ProjectController@addProjectStart' )->name( 'adminAddProjectStart' );
+	SimpleRouter::post('/adminAddProject', 'ProjectController@addProjectContent' )->name( 'adminAddProjectStart' );
 
 
 

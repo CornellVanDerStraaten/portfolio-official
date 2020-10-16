@@ -1,0 +1,39 @@
+.project-details__addProjectForm {
+    margin: 0 10% 150px 10%;
+    margin-bottom: 75px;
+}
+.project-details__project-intro {
+    display: flex;
+    width: 70%;
+    margin: 0 auto 100px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.project-intro__left {
+    flex: 1 1;
+    margin-right: 50px;
+  }
+.project-intro__right {
+  flex: 2 1;
+}
+.project-intro__img {
+    width: 100%;
+}
+.project-intro__titel {
+    font-size: 64px;
+    margin: 10px 0 10px 0 ;
+}
+.project-intro__textarea {
+    display: block;
+    resize: none;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    width: 70%;
+}
+.project-intro__link-input-div {
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.project-intro__text-input {
+    margin-left: 10px;
+}
