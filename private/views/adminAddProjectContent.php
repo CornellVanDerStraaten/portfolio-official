@@ -23,16 +23,18 @@
 
         </div>
         <div class="project-details__TLDR">
-            <h2 class="TLDR__title">TL;DR</h2>
-            <hr class="TLDR__hr">
+            <h2 class="project-details__title">TL;DR</h2>
+            <hr class="project-details__hr">
             <textarea class="TLDR__textarea" id="mytextarea" name="TLDR"></textarea>
         </div>
         <div class="project-details__project-content">
-            <h2 class="project-content__titel">Project Process</h2>
-            <hr class="project-content__hr">
+            <h2 class="project-details__title">Project Process</h2>
+            <hr class="project-details__hr">
             <textarea class="TLDR__textarea" id="mytextareaprocess" name="project-content-textarea"></textarea>
         </div>
-        <input type="submit" value="Verstuur">
+        <div class="project-details__submit-div">
+            <input class="admin-login__submit project-details__submit" type="submit" value="Verstuur">
+        </div>
     </div>
 </form>
 
