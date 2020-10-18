@@ -8,7 +8,7 @@
     <title>Cornell van der Straaten Portfolio</title>
     <meta name="description" content="Portfolio van software developer Cornell van der Straaten">
     <script src="https://kit.fontawesome.com/1eb7c10cba.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?php echo site_url('/') . 'css/style.css'?>">
 </head>
 
 <body>

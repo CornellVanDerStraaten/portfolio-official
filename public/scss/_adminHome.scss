@@ -1,0 +1,56 @@
+.adminHome__container {
+    margin: 0 10% 75px;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+.addProject__container {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(236, 236, 236, 0.726);
+}
+.addProject__title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+}
+.addProject__form {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+.addProject__label {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+}
+.addProject__text {
+    display: block;
+    margin-top: 3px;
+    width: 100%;
+}
+.addProject__file {
+    margin: 10px 0;
+}
+.addProject__submit {
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    border: 2px solid #20B3D1;
+    font-size: 24px;
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 25px;
+    transition: .25s ease-in-out;
+    font-weight: 600;
+    &:hover {
+        background-color: #20B3D1;
+        transition: .25s ease-in-out;
+        color: white;
+        cursor: pointer;
+    }
+}

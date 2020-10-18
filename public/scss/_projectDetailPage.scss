@@ -1,0 +1,25 @@
+.project-details__container-details {
+    margin: 0 10%;
+    margin-bottom: 75px;
+}
+.project-intro__intro-text {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: gray;
+}
+.project-intro__link-div {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.project-intro__link-div:nth-child(4) {
+    margin-left: 25px;
+}
+.project-intro__link {
+    text-decoration: none;
+    color: black;
+    & > p {
+        font-size: 20px;
+        border-bottom: 3px solid #20B3D1;
+    }
+}

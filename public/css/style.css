@@ -1,209 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   min-height: 100vh;
-}
-
-.intro {
-  margin: 0 10%;
-  margin-top: -20px;
-}
-
-.intro__quote {
-  font-size: 40px;
-  font-family: "Josefin Sans", sans-serif;
-  width: 80%;
-  font-weight: 700;
-  margin-top: 0;
-}
-
-.intro__person {
-  font-size: 28px;
-  margin-top: 0;
-  font-family: "Roboto", sans-serif;
-  color: #20B3D1;
-  font-weight: 200;
-}
-
-.projecten__container {
-  margin: 0 10%;
-  margin-top: 100px;
-  padding-bottom: 100px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.project {
-  flex: calc(33.33333% - 6px) 1;
-  margin: 3px;
-  overflow: hidden;
-  position: relative;
-}
-
-.project__overlay {
-  color: #fefefe;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transition: opacity 0.5s;
-  width: 100%;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.project__overlay:hover {
-  opacity: 1;
-}
-
-.project__title {
-  text-align: center;
-  font-size: 36px;
-  margin-top: 50px;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-.project__keywords {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 50px;
-  font-family: "Roboto", sans-serif;
-}
-
-.project__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.admin-login-div {
-  font-family: "Josefin Sans", sans-serif;
-  width: 100vw;
-}
-
-.admin-login__title {
-  font-size: 40px;
-  text-align: center;
-  color: #20B3D1;
-  margin-bottom: 15px;
-}
-
-.admin-login__form {
-  display: grid;
-  margin: 0 40%;
-}
-
-.admin-login__label {
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 25px;
-}
-
-.admin-login__input {
-  height: 50px;
-  margin-top: 5px;
-  font-size: 22px;
-  color: black;
-  border: none;
-  background-color: #daf7fd;
-}
-
-.admin-login__submit {
-  height: 50px;
-  width: 60%;
-  margin: 0 auto;
-  border-radius: 50px;
-  background-color: white;
-  color: black;
-  border: 2px solid #20B3D1;
-  font-size: 24px;
-  font-family: "Josefin Sans", sans-serif;
-  margin-top: 25px;
-  transition: 0.25s ease-in-out;
-  font-weight: 600;
-}
-.admin-login__submit:hover {
-  background-color: #20B3D1;
-  transition: 0.25s ease-in-out;
-  color: white;
-  cursor: pointer;
-}
-
-.project-details__addProjectForm {
-  margin: 0 10% 150px 10%;
-  margin-bottom: 75px;
-}
-
-.project-details__project-intro {
-  display: flex;
-  width: 70%;
-  margin: 0 auto 100px;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-.project-intro__left {
-  flex: 1 1;
-  margin-right: 50px;
-}
-
-.project-intro__right {
-  flex: 2 1;
-}
-
-.project-intro__img {
-  width: 100%;
-}
-
-.project-intro__titel {
-  font-size: 64px;
-  margin: 10px 0 10px 0;
-}
-
-.project-intro__textarea {
-  display: block;
-  resize: none;
-  font-size: 22px;
-  font-family: "Roboto", sans-serif;
-  width: 70%;
-}
-
-.project-intro__link-input-div {
-  display: block;
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-.project-intro__text-input {
-  margin-left: 10px;
-}
-
-.project-details__title {
-  font-size: 32px;
-  font-family: "Josefin Sans", sans-serif;
-  margin-bottom: 5px;
-}
-
-.project-details__hr {
-  border: 1px solid;
-}
-
-.project-details__submit-div {
-  width: 40%;
-  margin: 0 auto;
-}
-
-.project-details__submit {
-  width: 100%;
-  margin: 50px 0;
 }
 
 .header-div {
@@ -289,6 +91,298 @@ html, body {
 .footer__list-item__link:hover {
   transition: 0.3s ease-in-out;
   color: #20B3D1;
+}
+
+.intro {
+  margin: 0 10%;
+  margin-top: -20px;
+}
+
+.intro__quote {
+  font-size: 40px;
+  font-family: "Josefin Sans", sans-serif;
+  width: 80%;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.intro__person {
+  font-size: 28px;
+  margin-top: 0;
+  font-family: "Roboto", sans-serif;
+  color: #20B3D1;
+  font-weight: 200;
+}
+
+.projecten__container {
+  margin: 0 10%;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project {
+  flex: calc(33.33333% - 6px) 1;
+  margin: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project__overlay {
+  color: #fefefe;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.5s;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.project__overlay:hover {
+  opacity: 1;
+}
+
+.project__title {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 50px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.project__keywords {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.project__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-details__addProjectForm {
+  margin: 0 10% 150px 10%;
+  margin-bottom: 75px;
+}
+
+.project-details__project-intro {
+  display: flex;
+  width: 70%;
+  margin: 0 auto 100px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.project-intro__left {
+  flex: 1 1;
+  margin-right: 50px;
+}
+
+.project-intro__right {
+  flex: 2 1;
+}
+
+.project-intro__img {
+  width: 100%;
+}
+
+.project-intro__titel {
+  font-size: 64px;
+  margin: 10px 0 10px 0;
+}
+
+.project-intro__textarea {
+  display: block;
+  resize: none;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  width: 70%;
+}
+
+.project-intro__link-input-div {
+  display: block;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.project-intro__text-input {
+  margin-left: 10px;
+}
+
+.project-details__title {
+  font-size: 32px;
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 5px;
+}
+
+.project-details__hr {
+  border: 1px solid;
+}
+
+.project-details__submit-div {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.project-details__submit {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.project-details__container-details {
+  margin: 0 10%;
+  margin-bottom: 75px;
+}
+
+.project-intro__intro-text {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: gray;
+}
+
+.project-intro__link-div {
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.project-intro__link-div:nth-child(4) {
+  margin-left: 25px;
+}
+
+.project-intro__link {
+  text-decoration: none;
+  color: black;
+}
+.project-intro__link > p {
+  font-size: 20px;
+  border-bottom: 3px solid #20B3D1;
+}
+
+.admin-login-div {
+  font-family: "Josefin Sans", sans-serif;
+  width: 100vw;
+}
+
+.admin-login__title {
+  font-size: 40px;
+  text-align: center;
+  color: #20B3D1;
+  margin-bottom: 15px;
+}
+
+.admin-login__form {
+  display: grid;
+  margin: 0 40%;
+}
+
+.admin-login__label {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.admin-login__input {
+  height: 50px;
+  margin-top: 5px;
+  font-size: 22px;
+  color: black;
+  border: none;
+  background-color: #daf7fd;
+}
+
+.admin-login__submit {
+  height: 50px;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: white;
+  color: black;
+  border: 2px solid #20B3D1;
+  font-size: 24px;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 25px;
+  transition: 0.25s ease-in-out;
+  font-weight: 600;
+}
+.admin-login__submit:hover {
+  background-color: #20B3D1;
+  transition: 0.25s ease-in-out;
+  color: white;
+  cursor: pointer;
+}
+
+.adminHome__container {
+  margin: 0 10% 75px;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.addProject__container {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(236, 236, 236, 0.726);
+}
+
+.addProject__title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+.addProject__form {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.addProject__label {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+}
+
+.addProject__text {
+  display: block;
+  margin-top: 3px;
+  width: 100%;
+}
+
+.addProject__file {
+  margin: 10px 0;
+}
+
+.addProject__submit {
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: white;
+  color: black;
+  border: 2px solid #20B3D1;
+  font-size: 24px;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 25px;
+  transition: 0.25s ease-in-out;
+  font-weight: 600;
+}
+.addProject__submit:hover {
+  background-color: #20B3D1;
+  transition: 0.25s ease-in-out;
+  color: white;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

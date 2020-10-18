@@ -17,3 +17,4 @@
 
 # Ook onze gevoelige gegevens (usernames, passwords e.d.) NOOIT in Git
 /private/includes/config.php
+private/views/jwt.php

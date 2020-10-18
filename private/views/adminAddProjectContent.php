@@ -1,5 +1,11 @@
 <?php include 'header.php'; ?>
-<form class="project-details__addProjectForm" method="POST" action="<?php echo site_url('/adminAddProject') ?>">
+<form class="project-details__addProjectForm" method="POST" action="<?php echo site_url('/adminInsertProject') ?>">
+    <!-- Also submit basic project information -->
+    <input type="hidden" name="basic_project_information[project_naam]"       value="<?php echo $basic_project_info['post_info']['project_naam'] ?>">
+    <input type="hidden" name="basic_project_information[project_keywords]"   value="<?php echo $basic_project_info['post_info']['project_keywords'] ?>">
+    <input type="hidden" name="basic_project_information[project_cover_img]"  value="<?php echo $basic_project_info['filename'] ?>">
+
+
     <div class="project-details__container">
         <div class="project-details__project-intro">
             <div class="project-intro__left">
@@ -55,11 +61,25 @@
         toolbar_mode: 'floating',
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Cornell van der Straaten',
-        tinydrive_token_provider: '<?php echo url('jwt') ?>',
+        tinydrive_token_provider: '<?php echo site_url('/jwt') ?>',
         tinydrive_upload_path: "<?php echo site_url('/uploads/projectImages') ?>"
     });
     tinymce.init({
-        selector: '#mytextareaprocess'
+        selector: '#mytextareaprocess',
+        plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker tinydrive image imagetools code link',
+        toolbar: "insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
+        menu: {
+            insert: {
+                title: "Insert",
+                items: "insertfile"
+            }
+        },
+        insert_button_items: "insertfile",
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Cornell van der Straaten',
+        tinydrive_token_provider: '<?php echo site_url('/jwt') ?>',
+        tinydrive_upload_path: "<?php echo site_url('/uploads/projectImages') ?>"
     });
 </script>
 <?php include 'footer.php'; ?>

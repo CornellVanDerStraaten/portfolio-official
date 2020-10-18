@@ -9,7 +9,7 @@
 </div>
 <div class="projecten__container">
     <?php foreach ($projecten as $row) { ?>
-        <a href="#"  class="project">
+        <a href="<?php echo site_url('/projectDetails/') . $row['id'] ?>"  class="project">
             <div class="project__overlay">
                 <h2 class="project__title"><?php echo $row['project_naam'] ?></h2>
                 <p class="project__keywords"><?php echo $row['keywords'] ?></p>

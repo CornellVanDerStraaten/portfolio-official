@@ -21,7 +21,11 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Admin page functionalities ( Projecten )
 	SimpleRouter::post('/adminAddProject', 'ProjectController@addProjectContent' )->name( 'adminAddProjectStart' );
+	SimpleRouter::post('/adminInsertProject', 'ProjectController@insertProject' )->name( 'adminInsertProject' );
+	SimpleRouter::get( '/projectDetails/{id}', 'ProjectController@toProjectPage' )->name( 'projectDetailPage' );
 
+	// TinyDrive
+	SimpleRouter::match(['post', 'get'],'/jwt', 'ProjectController@jwt' )->name( 'jwt' );
 
 
 	// STOP: Tot hier al je eigen URL's zetten
