@@ -27,8 +27,10 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::post('/deleteProject', 'ProjectController@adminDeleteProject')->name( 'deleteProject' );
 	SimpleRouter::get( '/projectDetails/{id}', 'ProjectController@toProjectPage' )->name( 'projectDetailPage' );
 
-	// Blog Page 
+	// Blog Page & addCat
+	SimpleRouter::post('/addCategory', 'BlogController@addCat' )->name( 'addCat' );
 	SimpleRouter::get('/blogs', 'BlogController@toBlogPage' )->name( 'blogHome' );
+	SimpleRouter::post('/toMakeArticlePage', 'BlogController@startArticle')->name( 'startArticle' );
 	
 	// TinyDrive
 	SimpleRouter::match(['post', 'get'],'/jwt', 'ProjectController@jwt' )->name( 'jwt' );

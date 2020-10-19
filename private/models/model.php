@@ -40,7 +40,7 @@ function insertProject($postData)
         'tldr'              => $postData['TLDR'],
         'project_content'   => $postData['project-content-textarea']
     ];
-    
+
     $statement->execute($params);
 }
 
@@ -81,17 +81,17 @@ function modifyProject($postData)
         'tldr'              => $postData['TLDR'],
         'project_content'   => $postData['project-content-textarea']
     ];
-    
+
     $statement->execute($params);
 }
 
-function deleteProject($project_id) {
+function deleteProject($project_id)
+{
     $connection = dbConnect();
     $sql = 'DELETE FROM `projecten` WHERE `id` = :id';
     $statement = $connection->prepare($sql);
 
     $statement->execute(['id' => $project_id]);
-
 }
 
 function getProjects()
@@ -125,4 +125,24 @@ function getProject($project_id)
     $statement->execute(['id' => $project_id]);
 
     return $statement->fetch();
+}
+
+function addCategory($category_name)
+{
+    $connection = dbConnect();
+    $sql = 'INSERT INTO `categories` (`category_name`)
+            VALUES (:category_name) ';
+    $statement = $connection->prepare($sql);
+
+    $statement->execute(['category_name' => $category_name]);
+}
+
+function getAllCats()
+{
+    $connection = dbConnect();
+    $sql = 'SELECT * FROM `categories` ';
+    $statement = $connection->prepare($sql);
+    $statement->execute();
+
+    return $statement->fetchAll(); 
 }

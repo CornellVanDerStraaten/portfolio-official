@@ -18,6 +18,17 @@ class BlogController {
 		echo $template_engine->render('blogHome');
 	}
 
+	public function addCat() {
+
+		addCategory($_POST['categoryName']);
+
+		$overviewURL = url('adminDashboard');
+		redirect($overviewURL);
+	}
+
+	public function startArticle() {
+		print_r($_POST);
+	}
 
 }
 
