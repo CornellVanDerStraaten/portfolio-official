@@ -268,6 +268,56 @@ html, body {
   border-bottom: 3px solid #20B3D1;
 }
 
+.blog__container {
+  margin: 0 10% 75px;
+}
+
+.blog-container__blog-header {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.blog-header__title {
+  font-size: 80px;
+  margin: 0;
+}
+
+.blog-header__subtitle {
+  font-size: 26px;
+  color: #20B3D1;
+}
+
+.blog-header__search-input {
+  font-family: "Josefin Sans", sans-serif;
+  width: 250px;
+  font-size: 18px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid gray;
+}
+
+.blog-header__submit-input {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  width: 80px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 0 15px 15px 0;
+  border: 2px solid #20B3D1;
+  transition: 0.3s ease-in-out;
+  background-color: white;
+  cursor: pointer;
+}
+.blog-header__submit-input:hover {
+  color: white;
+  background-color: #20B3D1;
+}
+
+.blog-container__article-list {
+  margin-top: 100px;
+}
+
 .admin-login-div {
   font-family: "Josefin Sans", sans-serif;
   width: 100vw;
@@ -325,6 +375,7 @@ html, body {
   margin: 0 10% 75px;
   display: grid;
   grid-template-columns: 1fr 6fr;
+  gap: 25px;
 }
 
 .addProject__container {
@@ -383,6 +434,31 @@ html, body {
   transition: 0.25s ease-in-out;
   color: white;
   cursor: pointer;
+}
+
+.modifyProject__container {
+  grid-row: 2/3;
+  grid-template-columns: 1/2;
+}
+
+.modifyProject__select {
+  display: block;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.modifyProject__option {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.deleteProject__container {
+  grid-row: 3/4;
+  grid-template-columns: 1/2;
 }
 
 /*# sourceMappingURL=style.css.map */

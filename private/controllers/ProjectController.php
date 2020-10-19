@@ -32,6 +32,28 @@ class ProjectController
 		redirect($overviewURL);
 	}
 	
+	public function ToModifyProjectPage() {
+		$project = getProject($_POST['modify_project']);
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('modifyProject', ['project_info' => $project]);
+	}
+
+	public function modifyProject() {
+		modifyProject($_POST);
+		
+		$overviewURL = url('home');
+		redirect($overviewURL);
+	}
+
+	public function adminDeleteProject() {
+		deleteProject($_POST['delete_project_id']);
+		
+		$overviewURL = url('home');
+		redirect($overviewURL);
+	}
+
+
 	public function toProjectPage($project_id) {
 		$project_info = getProject($project_id);
 

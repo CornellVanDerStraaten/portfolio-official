@@ -22,8 +22,14 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	// Admin page functionalities ( Projecten )
 	SimpleRouter::post('/adminAddProject', 'ProjectController@addProjectContent' )->name( 'adminAddProjectStart' );
 	SimpleRouter::post('/adminInsertProject', 'ProjectController@insertProject' )->name( 'adminInsertProject' );
+	SimpleRouter::post('/adminToModifyProjectPage', 'ProjectController@toModifyProjectPage' )->name( 'adminToModifyProjectPage' );
+	SimpleRouter::post('/adminModifyProject', 'ProjectController@modifyProject')->name( 'modifyProject' );
+	SimpleRouter::post('/deleteProject', 'ProjectController@adminDeleteProject')->name( 'deleteProject' );
 	SimpleRouter::get( '/projectDetails/{id}', 'ProjectController@toProjectPage' )->name( 'projectDetailPage' );
 
+	// Blog Page 
+	SimpleRouter::get('/blogs', 'BlogController@toBlogPage' )->name( 'blogHome' );
+	
 	// TinyDrive
 	SimpleRouter::match(['post', 'get'],'/jwt', 'ProjectController@jwt' )->name( 'jwt' );
 

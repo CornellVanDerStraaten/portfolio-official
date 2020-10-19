@@ -17,10 +17,12 @@ class AdminController
 	{
 		isSessionStarted();
 
+		$allProjects = getProjectBasicInfo();
+
 		// If already logged in, go directly to dashboard
 		if (isset($_SESSION['user_id'])) {
 			$template_engine = get_template_engine();
-			echo $template_engine->render('adminHome');
+			echo $template_engine->render('adminHome', ['allProjects' => $allProjects]);
 		} else {
 			$template_engine = get_template_engine();
 			echo $template_engine->render('adminLogIn');
@@ -61,9 +63,11 @@ class AdminController
 	public function adminDashboard() {
 		isSessionStarted();
 		
+		$allProjects = getProjectBasicInfo();
+
 		if( isset($_SESSION['user_id']) ) {
 			$template_engine = get_template_engine();
-			echo $template_engine->render('adminHome');
+			echo $template_engine->render('adminHome', ['allProjects' => $allProjects]);
 		} else {
 			$result['errors']['ingelogd'] = 'Not logged in.';
 

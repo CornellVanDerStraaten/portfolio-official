@@ -1,7 +1,7 @@
 
 <footer class="footer">
     <div class="footer__container">
-        <p class="footer__text">
+        <p class="footer__text"> 
             Cornell van der Straaten | Copyright 2020
         </p>
         <ul class="footer__list">
@@ -19,5 +19,6 @@
     </div>
 </footer>
 
+<script src="<?php echo site_url('/js/activeNavScript.js') ?>" ></script>
 </body>
 </html>
