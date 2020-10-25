@@ -27,7 +27,10 @@ class BlogController {
 	}
 
 	public function startArticle() {
-		print_r($_POST);
+		$basic_article_info = processArticleInfo($_POST);
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('adminMakeArticle', ['basic_article_info' => $basic_article_info]);
 	}
 
 }

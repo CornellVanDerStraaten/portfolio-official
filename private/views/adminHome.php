@@ -58,12 +58,9 @@
             <label for="articleName" class="addProject__label">Article name</label>
             <input type="text" class="addProject__text" name="article_name" id="articleName">
 
-            
             <label for="click" class="addArticle__label">Choose categories</label>
             <input type="checkbox" id="click" class="click-me">
             
-            
-
             <div class="article-cat__article-overlay">
                 
                     <div class="article-overlay__body-header">

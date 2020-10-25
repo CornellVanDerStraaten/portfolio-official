@@ -180,3 +180,68 @@ function validateFotoUpload($myfile, $errors)
 		return $new_filename;
 	}
 }
+
+function processArticleInfo($postData) {
+	$article_title  = $postData['article_name'];
+	$today			= date("j F, Y");
+
+	// Change cat ID's from form into actual names
+	$categories		= getAllCats();
+
+	// Got actual Cat Id's from form
+	$postCategories = [];
+	$catID = 0;
+	foreach ($categories as $row) {
+		switch ( $postData['article_categories_id'][$row['id']] ) {
+			case 'on':
+				array_push($postCategories, $row['id']);
+				break;
+			case NULL:
+				break;
+		}
+		$catID += 1;
+}
+
+	$categoryNames = catIdToStrings($postCategories, $categories);
+
+	$article_info = [
+		'title' => $article_title,
+		'date'	=> $today,
+		'cats'	=> $categoryNames
+	];
+
+	return $article_info;
+}
+
+/**
+ * Does like title suggest
+ *  
+ * input = array with cat ID's & getAllCats()
+ * 
+ * output = array with cat names
+ */
+function catIdToStrings($postCategories, $categorieInfo) {
+	$catNames = [];
+
+	// print_r($postCategories);
+	// print_r($categorieInfo);
+	$postCategorieID = 0;
+	foreach ($postCategories as $postCatRow) {
+		// Loop for every cat in POST
+		foreach ($categorieInfo as $catRow) {
+		// Loop for every row in DB
+		if ($postCatRow == $catRow['id'] ) {
+			array_push($catNames, $catRow['category_name']);
+		}
+		else {
+			$postCategorieID += 1;
+		}
+	}
+	}
+	
+	print_r($catNames);
+	
+
+	
+
+}

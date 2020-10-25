@@ -146,3 +146,7 @@ function getAllCats()
 
     return $statement->fetchAll(); 
 }
+
+
+
+

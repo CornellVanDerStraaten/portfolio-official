@@ -1,0 +1,27 @@
+.article-template__container {
+    margin: 0 20%;
+    display: grid;
+    grid-template-columns: 2fr .6fr;
+    gap: 50px;
+}
+.article-info > div {
+    padding: 20px;
+    background-color: #e2e2e2;
+    margin-top: 15px;
+}
+.article-info__author {
+    & > img {
+        width: 80%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+}
+.article-info__title {
+    margin: 0;
+    font-size: 26px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #727375;
+}
+.article-info__line {
+    border: 1px solid #727375;
+}
