@@ -40,7 +40,7 @@
         <h2 class="project-details__title">Project Process</h2>
         <hr class="project-details__hr">
         <div class="project-content__text">
-            <?php echo $project_info['tldr']; ?>
+            <?php echo $project_info['project_content']; ?>
         </div>
     </div>
 </div>
