@@ -85,6 +85,34 @@
         </form>
     </div>
 
+    <div class="addProject__container modifyArticle__container">
+        <h2 class="addProject__title">Modify article</h2>
+        <form class="addProject__form" action="<?php echo site_url('/adminToModifyArticlePage') ?>" method="POST">
+            <label for="projects" class="addProject__label">Choose an article</label>
+            <select id="projects" name="modify_article" class="modifyProject__select">
+                <option class="modifyProject__option" selected="selected">Choose Article</option>
+                <?php foreach ($allArticles as $row) { ?>
+                    <option class="modifyProject__option" value="<?php echo $row['id'] ?>"><?php echo $row['id'] . '. ' . $row['article_title'] ?></option>
+                <?php } ?>
+            </select>
+            <input class="addProject__submit" type="submit" value="Modify Article">
+        </form>
+    </div>
+
+    <div class="addProject__container deleteArticle__container">
+        <h2 class="addProject__title">Delete Article</h2>
+        <form action="<?php echo site_url('/deleteArticle') ?>" class="addProject__form" method="POST">
+            <label for="projects" class="addProject__label">Delete an Article</label>
+            <select id="projects" name="delete_article_id" class="modifyProject__select">
+                <option class="modifyProject__option" selected="selected">Choose article</option>
+                <?php foreach ($allArticles as $row) { ?>
+                    <option class="modifyProject__option" value="<?php echo $row['id'] ?>"><?php echo $row['id'] . '. ' . $row['article_title'] ?></option>
+                <?php } ?>
+            </select>
+            <input class="addProject__submit" type="submit" value="Delete Cat">
+        </form>
+    </div>
+
     <div class="addProject__container addCategory__container ">
         <h2 class="addProject__title">Add category</h2>
         <form action="<?php echo site_url('/addCategory') ?>" class="addProject__form" method="POST">
@@ -92,6 +120,20 @@
             <input class="addProject__text" type="text" name="categoryName" id="categoryName">
 
             <input class="addProject__submit" type="submit" value="Add category">
+        </form>
+    </div>
+
+    <div class="addProject__container deleteCat__container">
+        <h2 class="addProject__title">Delete Cat</h2>
+        <form action="<?php echo site_url('/deleteCat') ?>" class="addProject__form" method="POST">
+            <label for="projects" class="addProject__label">Delete a cat</label>
+            <select id="projects" name="delete_cat_id" class="modifyProject__select">
+                <option class="modifyProject__option" selected="selected">Choose Cat</option>
+                <?php foreach ($allCategories as $row) { ?>
+                    <option class="modifyProject__option" value="<?php echo $row['id'] ?>"><?php echo $row['id'] . '. ' . $row['category_name'] ?></option>
+                <?php } ?>
+            </select>
+            <input class="addProject__submit" type="submit" value="Delete Cat">
         </form>
     </div>
 </div>

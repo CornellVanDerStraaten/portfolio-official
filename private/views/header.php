@@ -21,7 +21,7 @@
                 <ul class="header__list">
                     <a href="<?php echo url('home') ?>" class="header__link"><li class="header__list-item">Portfolio</li></a>
                     <a href="<?php echo url('blogHome') ?>" class="header__link"><li class="header__list-item">Blog</li></a>
-                    <a href="#" class="header__link"><li class="header__list-item">About</li></a>
+                    <a href="<?php echo url('about') ?>" class="header__link"><li class="header__list-item">About</li></a>
                 </ul>
             </nav>
         </div>

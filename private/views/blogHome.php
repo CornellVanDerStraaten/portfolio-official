@@ -11,9 +11,33 @@
     <div class="blog-container__article-list">
         <h3 class="article-list__year">2020</h3>
         <hr class="article-list__line">
+        <div class="article_list__articles-container">
         <?php
-            // TODO
+         if (!isset($articles[0])) { ?>
+                  <p class="error-message-articles"><?php   echo 'No results'; ?> </p> <?php 
+                }
+            foreach ( $articles as $row ) {  
+               
+            ?>
+               
+            <div class="articles-container__article">
+                <p class="article-date"><?php echo $row['article_date'] ?></p>
+                <h4 class="article-title"><a href="<?php echo site_url('/article/') . $row['id'] ?>"><?php echo $row['article_title'] ?></a></h4>
+
+                <p class="article-tags__tag" >Tags</p>
+                <div class="article-tags">
+                
+                <?php
+                    $catArray = explode(',', $row['article_cats']);
+                    foreach ($catArray as $catName ) { ?>
+                        <p class="<?php echo $catName . ' category'; ?>"><?php echo $catName; ?>
+                <?php } ?>
+                </div>
+            </div>
+            <?php
+            }
         ?>
+        
     </div>
 </div>
 

@@ -3,20 +3,12 @@
 <div class="article-template__container">
     <div class="article-container">
         <h1 class="article-container__title">
-            <?php echo $basic_article_info['title'] ?>
+            <?php echo $article_info['article_title'] ?>
         </h1>
 
-        <form class="article__form" method="POST" action="<?php echo site_url('/adminInsertArticle') ?>">
-            <input type="hidden" name="basic_article_info[article_title]" value="<?php echo $basic_article_info['title'] ?>">
-            <input type="hidden" name="basic_article_info[article_date]" value="<?php  echo $basic_article_info['date'] ?>">
-            <input type="hidden" name="basic_article_info[article_cats]" value="<?php  $catString = implode(',', $basic_article_info['cats']); echo $catString ?>">
+            <p class="articleIntro"><?php echo $article_info['article_intro'] ?></p>
 
-            <textarea class="articleIntro" name="articleIntro" id="articleIntro" cols="60" rows="10"></textarea>
-
-            <textarea class="TLDR__textarea articleContentText" id="articleTextArea" name="TLDR"></textarea>
-            <input type="submit" value="Publish Article" class="article_form__submit">
-        </form>
-
+            <p><?php echo $article_info['article_content'] ?></p>
     </div>
     <div class="article-info__container">
         <div class="article-info">
@@ -32,10 +24,11 @@
             <div class="article-info__tags">
                 <h3 class="article-info__title">Tags</h3>
                 <hr class="article-info__line">
-                <div class="article-tags">
+                <div class="article-tags modify_article_article_tags">
                 
                 <?php
-                foreach ($basic_article_info['cats'] as $catName ) {
+                $catArray = explode(',', $article_info['article_cats']);
+                foreach ($catArray as $catName ) {
                     ?> <?php //TODO a tag for page with only cats ?><p class="<?php echo $catName . ' category'; ?>"><?php echo $catName; ?>
                 <?php } ?>
                 </div>
@@ -45,7 +38,7 @@
                 <h3 class="article-info__title">Published</h3>
                 <hr class="article-info__line">
                 <p class="article-info__date">
-                <?php echo $basic_article_info['date']; ?></p>
+                <?php echo $article_info['article_date']; ?></p>
             </div>
 
             <div class="article-info__date">

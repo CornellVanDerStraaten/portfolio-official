@@ -123,9 +123,9 @@ function validateFotoUpload($myfile, $errors)
 	// Check if file was uploaded
 	if (!isset($_FILES['project_image'])) {
 		$errors['myfile'] = "No file uploaded.";
-		
+
 		$template_engine = get_template_engine();
-		echo $template_engine->render('adminHome',['errors' => $errors]);
+		echo $template_engine->render('adminHome', ['errors' => $errors]);
 		exit;
 	}
 
@@ -181,7 +181,8 @@ function validateFotoUpload($myfile, $errors)
 	}
 }
 
-function processArticleInfo($postData) {
+function processArticleInfo($postData)
+{
 	$article_title  = $postData['article_name'];
 	$today			= date("j F, Y");
 
@@ -190,17 +191,12 @@ function processArticleInfo($postData) {
 
 	// Got actual Cat Id's from form
 	$postCategories = [];
-	$catID = 0;
+
 	foreach ($categories as $row) {
-		switch ( $postData['article_categories_id'][$row['id']] ) {
-			case 'on':
-				array_push($postCategories, $row['id']);
-				break;
-			case NULL:
-				break;
+		if (isset($postData['article_categories_id'][$row['id']])) {
+			array_push($postCategories, $row['id']);
 		}
-		$catID += 1;
-}
+	}
 
 	$categoryNames = catIdToStrings($postCategories, $categories);
 
@@ -220,28 +216,18 @@ function processArticleInfo($postData) {
  * 
  * output = array with cat names
  */
-function catIdToStrings($postCategories, $categorieInfo) {
+function catIdToStrings($postCategories, $categorieInfo)
+{
 	$catNames = [];
 
-	// print_r($postCategories);
-	// print_r($categorieInfo);
-	$postCategorieID = 0;
 	foreach ($postCategories as $postCatRow) {
 		// Loop for every cat in POST
 		foreach ($categorieInfo as $catRow) {
-		// Loop for every row in DB
-		if ($postCatRow == $catRow['id'] ) {
-			array_push($catNames, $catRow['category_name']);
-		}
-		else {
-			$postCategorieID += 1;
+			// Loop for every row in DB
+			if ($postCatRow == $catRow['id']) {
+				array_push($catNames, $catRow['category_name']);
+			}
 		}
 	}
-	}
-	
-	print_r($catNames);
-	
-
-	
-
+	return $catNames;
 }

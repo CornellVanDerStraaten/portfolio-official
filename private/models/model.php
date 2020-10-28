@@ -137,6 +137,15 @@ function addCategory($category_name)
     $statement->execute(['category_name' => $category_name]);
 }
 
+function deleteCat($cat_id)
+{
+    $connection = dbConnect();
+    $sql = 'DELETE FROM `categories` WHERE `id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $statement->execute(['id' => $cat_id]);
+}
+
 function getAllCats()
 {
     $connection = dbConnect();
@@ -147,6 +156,89 @@ function getAllCats()
     return $statement->fetchAll(); 
 }
 
+function getAllArticles()
+{
+    $connection = dbConnect();
+    $sql = 'SELECT * FROM `articles` ';
+    $statement = $connection->prepare($sql);
+    $statement->execute();
 
+    return $statement->fetchAll(); 
+}
+
+function getArticle($article_id)
+{
+    $connection = dbConnect();
+    $sql = 'SELECT * FROM `articles` WHERE `id` = :id';
+    $statement = $connection->prepare($sql);
+    $statement->execute(['id' => $article_id]);
+
+    return $statement->fetch();
+}
+
+function insertArticleInfo($postData)
+{
+    $connection = dbConnect();
+
+   
+    $sql = 'INSERT INTO `articles` (`article_title`, `article_date`,  `article_cats`, `article_intro`, `article_content`)
+            VALUES (:article_title, :article_date, :article_cats, :article_intro, :article_content) ';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'article_title'     => $postData['basic_article_info']['article_title'],
+        'article_date'      => $postData['basic_article_info']['article_date'],
+        'article_cats'      => $postData['basic_article_info']['article_cats'],
+        'article_intro'     => $postData['articleIntro'],
+        'article_content'   => $postData['TLDR'],
+    ];
+
+    $statement->execute($params);
+}
+
+function modifyArticleDB($postData)
+{
+    $connection = dbConnect();
+
+    $sql = 'UPDATE `articles` 
+            SET `article_title` = :article_title,
+                `article_date` = :article_date,
+                `article_cats` = :article_cats, 
+                `article_intro` = :article_intro, 
+                `article_content` = :article_content
+            WHERE `id` = :id ';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id'                => $postData['article_id'],
+        'article_title'     => $postData['basic_article_info']['article_title'],
+        'article_date'      => $postData['basic_article_info']['article_date'],
+        'article_cats'      => $postData['basic_article_info']['article_cats'],
+        'article_intro'     => $postData['articleIntro'],
+        'article_content'   => $postData['TLDR']
+    ];
+
+    $statement->execute($params);
+}
+
+function deleteArticle($article_id)
+{
+    $connection = dbConnect();
+    $sql = 'DELETE FROM `articles` WHERE `id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $statement->execute(['id' => $article_id]);
+}
+
+function getSearchedArticles($searchedTerm) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM `articles` WHERE `article_title` LIKE :searchedTerm';
+    $statement = $connection->prepare($sql);
+
+    $statement->execute(['searchedTerm' => '%' . $searchedTerm . '%']);
+
+    return $statement->fetchAll();
+}
 
 

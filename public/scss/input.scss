@@ -10,11 +10,12 @@ html, body {
 }
 
 
-
+@import 'about';
 @import 'headerFooter';  
 @import 'home';  
 @import 'addProjectPage';
 @import 'addArticlePage';
+@import 'categories';
 @import 'projectDetailPage';
 @import 'blogHome'; 
 @import 'adminLogIn'; 

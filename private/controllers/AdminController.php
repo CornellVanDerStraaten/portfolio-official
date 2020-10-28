@@ -63,10 +63,13 @@ class AdminController
 		
 		$allProjects 	= getProjectBasicInfo();
 		$allCategories	= getAllCats();
+		$allArticles 	= getAllArticles();
 
 		if( isset($_SESSION['user_id']) ) {
 			$template_engine = get_template_engine();
-			echo $template_engine->render('adminHome', ['allProjects' => $allProjects, 'allCategories' => $allCategories ]);
+			echo $template_engine->render('adminHome', ['allProjects' 	=> $allProjects,
+														'allCategories' => $allCategories,
+														'allArticles' 	=> $allArticles ]);
 		} else {
 			$result['errors']['ingelogd'] = 'Not logged in.';
 
