@@ -43,7 +43,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::post('/deleteArticle', 'BlogController@deleteArticle' )->name( 'deleteArticle' );
 
 	// About
-	SimpleRouter::get('/about', 'WebsiteController@about')->name( 'aboutPage' );
+	SimpleRouter::get('/about', 'WebsiteController@about')->name( 'about' );
 
 
 	
