@@ -13,7 +13,7 @@
             <p class="about-info__contact-mail"><a href="mailto:cornellbvanders@gmail.com">Cornellbvanders@gmail.com</a></p>
         </div>
         
-        <a href="#" class="about-info__cv-button">DOWNLOAD RESUME</a>
+        <a href="<?php echo site_url('/resume.pdf') ?>" target="_blank" class="about-info__cv-button">DOWNLOAD RESUME</a>
     </div>
 </div>
 <?php include 'footer.php' ?>

@@ -1,4 +1,6 @@
-<?php include 'header.php';  ?>
+<?php include 'header.php';  
+?>
+
 <div class="intro">
     <p class="intro__quote">
         “Passion is caused by ambition, ambition inspires curiosity and curiosity creates good programmers. Those create good programs and make the world a happy and lazy place.”
