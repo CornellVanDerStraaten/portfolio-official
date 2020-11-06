@@ -9,7 +9,10 @@
     <meta name="description" content="Portfolio van software developer Cornell van der Straaten">
     <script src="https://kit.fontawesome.com/1eb7c10cba.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/jpg" href="<?php echo site_url() . '/img/headerLogo.svg' ?>"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo site_url('/') . 'css/style.css'?>">
+    
 </head>
 
 <body>

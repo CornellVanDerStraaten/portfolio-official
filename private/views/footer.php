@@ -21,5 +21,7 @@
 </footer>
 
 <script src="<?php echo site_url('/js/activeNavScript.js') ?>" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 </body>
 </html>
