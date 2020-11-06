@@ -49,6 +49,21 @@
         margin-top: 25px;
     }
 }
+@media screen and (min-width: 70em) {
+    .header-div {
+        margin: 0 10%;
+        margin-top: 40px;
+    }
+    .header-div__logo-img {
+        width: 200px;
+    }
+    .header__link {
+        font-size: 30px;
+    }
+    .header__list {
+        margin-top: 25px;
+    }
+}
 
 
 
