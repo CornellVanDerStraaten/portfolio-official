@@ -121,27 +121,105 @@ html, body {
   color: #20B3D1;
 }
 
-.intro {
-  margin: 0 10%;
-  margin-top: -20px;
+.intro__container {
+  margin: 0 5%;
 }
 
-.intro__quote {
-  font-size: 40px;
+.intro__title, .quote__author {
   font-family: "Josefin Sans", sans-serif;
-  width: 80%;
-  font-weight: 700;
+}
+
+.intro__title {
+  width: 90vw;
+  font-size: 6vw;
+}
+
+.quote__author {
+  font-size: 14px;
   margin-top: 0;
 }
 
-.intro__person {
-  font-size: 28px;
-  margin-top: 0;
-  font-family: "Roboto", sans-serif;
+.quote__text {
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #87898C;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.blue-text {
   color: #20B3D1;
-  font-weight: 200;
 }
 
+.intro__socials {
+  display: none;
+}
+
+@media screen and (min-width: 370px) {
+  .quote__text {
+    font-size: 14px;
+  }
+
+  .quote__author {
+    font-size: 16px;
+  }
+
+  .intro__socials {
+    display: block;
+  }
+
+  .intro__list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .intro__list-item {
+    display: inline-block;
+    font-size: 24px;
+  }
+  .intro__list-item > a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 750px) {
+  .intro__title {
+    margin-top: 10px;
+    font-size: 3.8vw;
+    width: 53vw;
+    margin-bottom: 1vw;
+  }
+
+  .home__intro {
+    height: 40vw;
+    background-image: url("../img/intro_background.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+
+  .intro__container {
+    position: absolute;
+    left: 6.2vw;
+    top: 7vw;
+    height: 35vw;
+  }
+
+  .quote__text {
+    font-size: 1.5vw;
+  }
+
+  .quote__author {
+    font-size: 2vw;
+  }
+
+  .intro__list-item {
+    font-size: 40px;
+  }
+}
 .projecten__container {
   margin: 0 10%;
   margin-top: 100px;
@@ -149,13 +227,6 @@ html, body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.project {
-  flex: calc(33.33333% - 6px) 1;
-  margin: 3px;
-  overflow: hidden;
-  position: relative;
 }
 
 .project__overlay {
