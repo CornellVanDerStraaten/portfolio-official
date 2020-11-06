@@ -31,20 +31,15 @@
         <div class="home-about__img-container">
             <img src="<?php echo site_url() . '/img/about-image.jpeg' ?>" alt="Cornell van der Straaten" class="home-about__img">
         </div>
-        <div class="about-info__container">
-            <h1 class="about-info__title">Cornell van der Straaten</h1>
-            <p class="about-info__text">Hoi, ik ben Cornell van der Straaten. Een front- en backend developer.
+        <div class="home-about__container">
+            <h1 class="home-about__name">Cornell van der Straaten</h1>
+            <p class="home-about__text">Hoi, ik ben Cornell van der Straaten. Een front- en backend developer.
                 Ik ben geinteresseerd en gepassioneerd over alles development gerelateerd.
                 Momenteel volg ik een MBO studie op het Mediacollege Amsterdam.
                 Ook heb ik samen met Mees Postma een klein bedrijf gestart waar wij wordpress websites en hosting opzetten en ook SEO verzorgen.
             </p>
-            <div class="about-info__contact">
-                <h3 class="about-info__contact-title">Contact Mij</h3>
-                <p class="about-info__social-link">Github: <a href="https://github.com/CornellVanDerStraaten" target="_blank">@CornellVanDerStraaten</a></p>
-                <p class="about-info__social-link">LinkedIn: <a href="https://www.linkedin.com/in/cornell-van-der-straaten-865519192/" target="_blank">@CornellvanderStraaten</a></p>
-            </div>
 
-            <a href="<?php echo site_url('/resume.pdf') ?>" target="_blank" class="about-info__cv-button">NAAR CV</a>
+            <a href="<?php echo site_url('/resume.pdf') ?>" target="_blank" class="about-info__cv-button home-about__knop">NAAR CV</a>
         </div>
     </div>
 </div>
