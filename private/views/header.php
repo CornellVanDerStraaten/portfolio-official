@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cornell van der Straaten Portfolio</title>
     <meta name="description" content="Portfolio van software developer Cornell van der Straaten">
@@ -20,8 +20,6 @@
             </a>
             <nav class="header__nav" id="headerNav">
                 <ul class="header__list">
-                    <a href="<?php echo url('home') ?>" class="header__link"><li class="header__list-item">Portfolio</li></a>
-                    <a href="<?php echo url('blogHome') ?>" class="header__link"><li class="header__list-item">Blog</li></a>
                     <a href="<?php echo url('about') ?>" class="header__link"><li class="header__list-item">About</li></a>
                 </ul>
             </nav>

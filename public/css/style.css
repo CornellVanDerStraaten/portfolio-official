@@ -9,8 +9,8 @@ html, body {
 }
 
 .header-div {
-  margin: 0 10%;
-  margin-top: 70px;
+  margin: 0 5%;
+  margin-top: 20px;
   margin-bottom: 7%;
   font-family: "Josefin Sans", sans-serif;
 }
@@ -20,18 +20,18 @@ html, body {
 }
 
 .header-div__logo-img {
-  width: 175px;
+  width: 100px;
 }
 
 .header__nav {
-  width: 350px;
+  width: auto;
   height: 106px;
   margin: auto 0;
   float: right;
 }
 
 .header__list {
-  margin-top: 35px;
+  margin-top: 20px;
   list-style-type: none;
   padding-left: 0;
 }
@@ -40,9 +40,8 @@ html, body {
   display: inline-block;
   text-decoration: none;
   color: black;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  margin: 0 20px;
   transition: 0.3s ease-in-out;
 }
 .header__link:hover {
@@ -54,28 +53,39 @@ html, body {
   border-bottom: 3px solid #20B3D1;
 }
 
+@media screen and (min-width: 38em) {
+  .header-div__logo-img {
+    width: 150px;
+  }
+
+  .header__link {
+    font-size: 26px;
+  }
+
+  .header__list {
+    margin-top: 25px;
+  }
+}
 .footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   background-color: white;
 }
 
-.footer__text {
-  margin-top: 30px;
-}
-
 .footer__container {
-  margin: 0 10%;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 5%;
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
 }
 
+.footer__text {
+  text-align: center;
+}
+
 .footer__list {
   display: flex;
+  justify-content: center;
   list-style-type: none;
+  padding: 0;
 }
 
 .footer__list-item {
@@ -85,8 +95,8 @@ html, body {
 .footer__list-item__link {
   text-decoration: none;
   color: black;
-  font-size: 34px;
-  transition: 0.3s ease-in-out;
+  font-size: 26px;
+  transition: 0.2s ease-in-out;
 }
 .footer__list-item__link:hover {
   transition: 0.3s ease-in-out;
