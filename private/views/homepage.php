@@ -43,10 +43,10 @@
         </div>
     </div>
 </div>
-
-<div class="projecten__container ">
+<div class="gray-row">
+    <div class="projecten__container ">
     <h2 class="projecten__title blue-text">Mijn werk</h2>
-    <div class="owl-carousel ">
+    <div class="owl-carousel owl-theme home-carousel">
     <?php foreach ($projecten as $row) { ?>
         <a href="<?php echo site_url('/projectDetails/') . $row['id'] ?>" class="project">
             <div class="project__overlay">
@@ -58,14 +58,15 @@
     <?php } ?>
     </div>
 </div>
+</div>
+
 
 <div class="contact__container">
-    <h2 class="contact__title">Contact mij</h2>
+    <h2 class="contact__title blue-text">Contact mij</h2>
     <form action="#" class="contact-form">
-        <input type="text" name="contact_naam" id="contactNaamInput" placeholder="Naam">
-        <input type="mail" name="contact_mail" id="contactMailInput" placeholder="E-mail">
-        <input type="text" name="contact_bericht" id="contactBerichtInput" placeholder="Bericht">
-
+        <input type="text" class="contact-form__input" name="contact_naam" id="contactNaamInput" placeholder="Naam">
+        <input type="mail" class="contact-form__input" name="contact_mail" id="contactMailInput" placeholder="E-mail">
+        <input type="text" class="contact-form__input" name="contact_bericht" id="contactBerichtInput" placeholder="Bericht">
     </form>
 </div>
 
