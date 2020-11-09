@@ -11,12 +11,12 @@
         <div class="intro__socials">
             <ul class="intro__list">
                 <li class="intro__list-item">
-                    <a href="https://www.linkedin.com/in/cornell-van-der-straaten-865519192/" class="intro__list-item__link">
+                    <a target="_blank" href="https://www.linkedin.com/in/cornell-van-der-straaten-865519192/" class="intro__list-item__link">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </li>
                 <li class="intro__list-item">
-                    <a href="https://github.com/CornellVanDerStraaten" class="intro__list-item__link">
+                    <a target="_blank" href="https://github.com/CornellVanDerStraaten" class="intro__list-item__link">
                         <i class="fab fa-github"></i>
                     </a>
                 </li>
