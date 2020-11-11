@@ -560,14 +560,14 @@ html, body {
 
 .project-details__project-intro {
   display: flex;
-  width: 70%;
-  margin: 0 auto 100px;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
   font-family: "Josefin Sans", sans-serif;
 }
 
 .project-intro__left {
   flex: 1 1;
-  margin-right: 50px;
 }
 
 .project-intro__right {
@@ -575,12 +575,15 @@ html, body {
 }
 
 .project-intro__img {
-  width: 100%;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .project-intro__titel {
-  font-size: 64px;
+  font-size: 13vw;
   margin: 10px 0 10px 0;
+  text-align: center;
 }
 
 .project-intro__textarea {
@@ -741,10 +744,12 @@ html, body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: gray;
+  text-align: center;
 }
 
 .project-intro__link-div {
   display: inline-block;
+  margin: 0 auto;
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -761,6 +766,91 @@ html, body {
   border-bottom: 3px solid #20B3D1;
 }
 
+.project-intro__link-div-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-content__text > table {
+  width: 100% !important;
+  font-size: 12px !important;
+}
+.project-content__text > p > img {
+  width: 100%;
+}
+
+.project-details__project-content {
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 750px) {
+  .project-details__project-intro {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    width: 100%;
+  }
+
+  .project-intro__img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+
+  .project-intro__titel {
+    font-size: 40px;
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  .project-intro__intro-text {
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  .project-intro__link-div {
+    margin: 0;
+    margin-left: 15px;
+  }
+
+  .project-intro__link-div-container {
+    justify-content: flex-start;
+  }
+
+  .project-content__text > table {
+    width: 80% !important;
+    font-size: 14px !important;
+  }
+  .project-content__text > p > img {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .project-details__project-intro {
+    margin-top: 30px;
+    width: 70%;
+  }
+
+  .project-intro__titel {
+    font-size: 46px;
+    margin: 20px 0 0 15px;
+  }
+
+  .project-intro__img {
+    width: 300px;
+  }
+
+  .project-content__text > table {
+    width: 70% !important;
+    font-size: 19px !important;
+  }
+  .project-content__text > p > img {
+    width: 50%;
+  }
+}
 .blog__container {
   margin: 0 10% 75px;
 }
@@ -1114,53 +1204,31 @@ html, body {
   border: solid 2px #20B3D1;
 }
 
-.about-container {
-  display: grid;
-  grid-template-columns: 0.4fr 1fr;
-  margin: 0 20%;
-  margin-top: -50px;
+.about-page {
+  margin-top: 50px !important;
+  margin-bottom: 50px;
 }
 
-.about-image {
-  width: 100%;
-}
-
-.about-info__container {
-  margin: 0 0 0 10%;
-}
-
-.about-info__title {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 60px;
-  font-weight: 500;
-  letter-spacing: -2px;
-  margin-bottom: 10px;
-}
-
-.about-info__text {
-  font-family: "Montserrat", sans-serif;
+.workInProgress {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  text-align: center;
   font-size: 18px;
-  color: #87898C;
-  font-weight: 500;
 }
 
-.about-info__contact-title {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.about-info__contact-mail {
-  margin-top: 5px;
-  font-family: "Montserrat", sans-serif;
+.about-page__text-div {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
   font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 40px;
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 50px;
 }
-.about-info__contact-mail > a {
-  color: #20B3D1;
-  text-decoration: none;
+.about-page__text-div > p {
+  margin: 0;
 }
 
 .about-info__cv-button {
@@ -1171,6 +1239,15 @@ html, body {
   font-size: 20px;
   color: white;
   text-decoration: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .about-page__text-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 25px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

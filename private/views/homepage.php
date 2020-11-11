@@ -1,6 +1,8 @@
 <?php include 'header.php';
 ?>
-
+<div class="workInProgress">
+    <p class="workInProgress__text">Deze site is nog onder constructie</p>
+</div>
 <div class="home__intro">
     <div class="intro__container">
         <p class="intro__title">Hoi, mijn naam is Cornell<br>Ik ben een <span class="blue-text">Web Developer</span> met een passie voor Back-End</p>
@@ -39,7 +41,7 @@
                 Ook heb ik samen met Mees Postma een klein bedrijf gestart waar wij wordpress websites en hosting opzetten en ook SEO verzorgen.
             </p>
 
-            <a href="<?php echo site_url('/resume.pdf') ?>" target="_blank" class="about-info__cv-button home-about__knop">NAAR CV</a>
+            <a href="<?php echo site_url('/eindR.pdf') ?>" target="_blank" class="about-info__cv-button home-about__knop">NAAR CV</a>
         </div>
     </div>
 </div>

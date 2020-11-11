@@ -7,9 +7,11 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: gray;
+    text-align: center;
 }
 .project-intro__link-div {
     display: inline-block;
+    margin: 0 auto;
     font-family: 'Josefin Sans', sans-serif;
 }
 .project-intro__link-div:nth-child(4) {
@@ -21,5 +23,84 @@
     & > p {
         font-size: 20px;
         border-bottom: 3px solid #20B3D1;
+    }
+}
+.project-intro__link-div-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.project-content__text {
+    & > table {
+        width: 100% !important; 
+        font-size: 12px !important;
+    }
+    & > p > img {
+        width: 100%;
+    }
+}
+.project-details__project-content {
+    margin-top: 50px;
+}
+@media screen and (min-width: 750px) {
+    .project-details__project-intro {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        width: 100%;
+    }
+    .project-intro__img {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 5%;
+    }
+    .project-intro__titel {
+        font-size: 40px;
+        text-align: left;
+        margin-left: 15px;
+    }
+    .project-intro__intro-text { 
+        text-align: left;
+        margin-left: 15px;
+    }
+    .project-intro__link-div {
+        margin: 0;
+        margin-left: 15px;
+    }
+    .project-intro__link-div-container { 
+        justify-content: flex-start;
+    }
+    .project-content__text {
+        & > table {
+            width: 80% !important; 
+            font-size: 14px !important;
+        }
+        & > p > img {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+}
+@media screen and (min-width: 1050px) { 
+    .project-details__project-intro { 
+        margin-top: 30px;
+        width: 70%;
+    }
+    .project-intro__titel {
+        font-size: 46px;
+        margin: 20px 0 0 15px;
+    }
+    .project-intro__img { 
+       width: 300px;
+    }
+    .project-content__text {
+        & > table {
+            width: 70% !important; 
+            font-size: 19px !important;
+        }
+        & > p > img {
+            width: 50%;
+        }
     }
 }

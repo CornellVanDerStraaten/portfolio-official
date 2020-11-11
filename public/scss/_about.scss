@@ -1,44 +1,26 @@
-.about-container {
-    display: grid;
-    grid-template-columns: .4fr 1fr;
-    margin: 0 20%;
-    margin-top: -50px;
+.about-page {
+    margin-top: 50px !important;
+    margin-bottom: 50px;
 }
-.about-image {
-    width: 100%;
-}
-.about-info__container {
-    margin: 0 0 0 10%;
-}
-.about-info__title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 60px;
-    font-weight: 500;
-    letter-spacing: -2px;
-    margin-bottom: 10px;
-}
-.about-info__text {
-    font-family: 'Montserrat', sans-serif;
+.workInProgress {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    text-align: center;
     font-size: 18px;
-    color: #87898C;
-    font-weight: 500;
 }
-.about-info__contact-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 26px;  
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-.about-info__contact-mail {
-    margin-top: 5px;
+.about-page__text-div {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    font-size: 16px;
+    width: 90%;
+    margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;  
-    font-weight: 400;
-    & > a {
-        color: #20B3D1;
-        text-decoration: none;
+    margin-bottom: 50px;
+    & > p {
+        margin: 0;
     }
-    margin-bottom: 40px;
 }
 .about-info__cv-button {
     background-color: #20B3D1;
@@ -50,4 +32,12 @@
     font-size: 20px;
     color: white;
     text-decoration: none;
+}
+@media screen and (min-width: 1000px) {
+    .about-page__text-div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 25px;
+    }
 }
