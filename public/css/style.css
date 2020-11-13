@@ -437,6 +437,14 @@ html, body {
   background: #20B3D1 !important;
 }
 
+.owl-prev {
+  background-color: transparent !important;
+}
+
+.owl-next {
+  background-color: transparent !important;
+}
+
 @media screen and (min-width: 760px) {
   .nav-right, .nav-left {
     color: #20B3D1;
@@ -778,7 +786,8 @@ html, body {
   font-size: 12px !important;
 }
 .project-content__text > p > img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .project-details__project-content {
@@ -824,7 +833,6 @@ html, body {
     font-size: 14px !important;
   }
   .project-content__text > p > img {
-    width: 70%;
     margin: 0 auto;
   }
 }
@@ -846,9 +854,6 @@ html, body {
   .project-content__text > table {
     width: 70% !important;
     font-size: 19px !important;
-  }
-  .project-content__text > p > img {
-    width: 50%;
   }
 }
 .blog__container {
