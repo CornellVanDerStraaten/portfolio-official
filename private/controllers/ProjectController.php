@@ -5,7 +5,7 @@ namespace Website\Controllers;
 /**
  * 
  *
- * Deze handelt de logica van de homepage af
+ * Deze handelt de logica van de projectpage af
  * Haalt gegevens uit de "model" laag van de website (de gegevens)
  * Geeft de gegevens aan de "view" laag (HTML template) om weer te geven
  *
@@ -13,6 +13,10 @@ namespace Website\Controllers;
 
 class ProjectController
 {
+	/**
+	 * Uses information from admin add Project form to create a template page
+	 * where the project content can now be added.
+	 */
 	public function addProjectContent()
 	{	
 		$errors = [];
@@ -24,7 +28,9 @@ class ProjectController
 		$template_engine = get_template_engine();
 		echo $template_engine->render('adminAddProjectContent', ['basic_project_info' => $basic_project_info]);
 	}
-
+	/**
+	 * Insert project into DB
+	 */
 	public function insertProject() {
 		insertProject($_POST);
 
@@ -32,13 +38,20 @@ class ProjectController
 		redirect($overviewURL);
 	}
 	
+	/**
+	 * Get project data from db, then fill the project page template.
+	 * Data can then be modified.
+	 */
 	public function ToModifyProjectPage() {
 		$project = getProject($_POST['modify_project']);
 
 		$template_engine = get_template_engine();
 		echo $template_engine->render('modifyProject', ['project_info' => $project]);
 	}
-
+	
+	/**
+	 * Update modified project in db
+	 */
 	public function modifyProject() {
 		modifyProject($_POST);
 		
@@ -53,7 +66,9 @@ class ProjectController
 		redirect($overviewURL);
 	}
 
-
+	/**
+	 * Get db data where project id, then render page
+	 */
 	public function toProjectPage($project_id) {
 		$project_info = getProject($project_id);
 

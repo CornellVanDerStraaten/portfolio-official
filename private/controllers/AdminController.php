@@ -32,10 +32,10 @@ class AdminController
 		$result = validateLogIn($_POST);
 
 		if (count($result['errors']) === 0) {
-			// Check if email exists
+			// Check if email exists in db
 			$statement = userRegisteredCheck($result['data']['email']);
 			if ($statement->rowCount() === 1 ) {
-				// Uitvoeren wanneer email al bekend is
+				// Execute when mail is known
 				$userInfo = $statement->fetch();
 			
 				if (password_verify($result['data']['password'], $userInfo['password'])) {
@@ -61,6 +61,7 @@ class AdminController
 	public function adminDashboard() {
 		isSessionStarted();
 		
+		// Get all data from db
 		$allProjects 	= getProjectBasicInfo();
 		$allCategories	= getAllCats();
 		$allArticles 	= getAllArticles();

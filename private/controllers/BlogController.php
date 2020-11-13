@@ -5,7 +5,7 @@ namespace Website\Controllers;
 /**
  * 
  *
- * Deze handelt de logica van de homepage af
+ * Deze handelt de logica van de blogpage af
  * Haalt gegevens uit de "model" laag van de website (de gegevens)
  * Geeft de gegevens aan de "view" laag (HTML template) om weer te geven
  *
